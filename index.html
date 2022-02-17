@@ -1,12 +1,8 @@
 <head>
     <script>
-    function getFullscreenToggle(element){
-        // detect if ios. if so, hide fullscreen button (unsupported)
-        if(iOS()) {
-            var iosStyles = document.createElement("style");
-            iosStyles.innerHTML = "#fullscreen {display:none;}";
-            document.head.appendChild(iosStyles);
-        }
+    window.onload = detectIos(); 
+            
+    function getFullscreenToggle(element) {
         
         if(document.fullscreenElement) {
             console.log('fullscreen');
@@ -57,6 +53,15 @@
         }
     }
     
+    function detectIos {
+         // detect if ios. if so, hide fullscreen button (unsupported)
+        if(iOS()) {
+            var iosStyles = document.createElement("style");
+            iosStyles.innerHTML = "#fullscreen {display:none;}";
+            document.head.appendChild(iosStyles);
+        }   
+    }    
+        
     function iOS() {
       return [
         'iPad Simulator',
