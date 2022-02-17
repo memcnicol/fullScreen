@@ -42,7 +42,12 @@
             element.webkitRequestFullscreen();
             } else if(element.msRequestFullscreen) {
             element.msRequestFullscreen();
-            }
+            } else if(element.webkitSetPresentationMode) {
+            console.log("YUSSSS");
+            element.webkitSetPresentationMode("fullscreen");
+            } else {
+            console.log("nooooo");
+        }
     }
     </script>
 
