@@ -1,6 +1,13 @@
 <head>
     <script>
     function getFullscreenToggle(element){
+        // detect if ios. if so, hide fullscreen button (unsupported)
+        if(iOS()) {
+            var iosStyles = document.createElement("style");
+            iosStyles.innerHTML = "#fullscreen {display:none;}";
+            document.head.appendChild(iosStyles);
+        }
+        
         if(document.fullscreenElement) {
             console.log('fullscreen');
             closeFullscreen();
@@ -48,6 +55,19 @@
             } else {
             console.log("nooooo");
         }
+    }
+    
+    function iOS() {
+      return [
+        'iPad Simulator',
+        'iPhone Simulator',
+        'iPod Simulator',
+        'iPad',
+        'iPhone',
+        'iPod'
+      ].includes(navigator.platform)
+      // iPad on iOS 13 detection
+      || (navigator.userAgent.includes("Mac") && "ontouchend" in document)
     }
     </script>
 
