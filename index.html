@@ -5,7 +5,6 @@
         if(document.fullscreenElement) {
             console.log('fullscreen');
             closeFullscreen();
-
         } else if(document.mozFullScreenElement) {
             console.log('fullscreen');
             closeFullscreen();
@@ -31,6 +30,7 @@
             document.webkitExitFullscreen();
             } else if(document.msExitFullscreen) {
             document.msExitFullscreen();
+            }
         }
     }
 
