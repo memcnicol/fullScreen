@@ -47,26 +47,26 @@
         }
     }
     
-    function detectIos() {
-         // detect if ios. if so, hide fullscreen button (unsupported)
-        if(iOS()) {
-            console.log("Unsupported Device, hiding fullscreen button");
-            var iosStyles = document.createElement("style");
-            iosStyles.innerHTML = "#fullscreen {display:none;}";
-            document.head.appendChild(iosStyles);
-        }   
-    }    
+//     function detectIos() {
+//          // detect if ios. if so, hide fullscreen button (unsupported)
+//         if(iOS()) {
+//             console.log("Unsupported Device, hiding fullscreen button");
+//             var iosStyles = document.createElement("style");
+//             iosStyles.innerHTML = "#fullscreen {display:none;}";
+//             document.head.appendChild(iosStyles);
+//         }   
+//     }    
         
-    function iOS() {
-      return [
-        'iPhone Simulator',
-        'iPod Simulator',
-        'iPhone',
-        'iPod'
-      ].includes(navigator.platform)
-      // iPad on iOS 13 detection
-      || (navigator.userAgent.includes("Mac") && "ontouchend" in document)
-    }
+//     function iOS() {
+//       return [
+//         'iPhone Simulator',
+//         'iPod Simulator',
+//         'iPhone',
+//         'iPod'
+//       ].includes(navigator.platform)
+//       // iPad on iOS 13 detection
+//       || (navigator.userAgent.includes("Mac") && "ontouchend" in document)
+//     }
     </script>
 
     <style>
